@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perdón</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('fondo_p.jpg'); /* Ruta de la imagen de fondo */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background-color: rgba(255, 192, 203, 0.8); /* Color rosa claro con transparencia */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff1493;
+    }
+    #te-amo-text {
+      font-size: 32px;
+      color: red;
+      margin-bottom: 10px;
+      display: none; /* Ocultar inicialmente el texto */
+    }
+    #vida-amor-gif {
+      max-width: 100%;
+      max-height: 100%;
+      display: none; /* Ocultar inicialmente el GIF */
+    }
+  </style>
+</head>
+<body>
+  <audio src="https://drive.google.com/uc?export=download&id=1FiWDb27EE2dgK5mst6pIf5reJA3t7Zz9" autoplay loop></audio> <!-- Reproduce la música de fondo en bucle -->
+  <div class="container">
+    <div id="te-amo-text">TE AMO<3</div>
+    <img id="vida-amor-gif" src="vida.gif" alt="Vida">
+    <div style="font-size: 24px; margin-bottom: 20px;" id="quiero-perdon">Quiero tu perdón</div>
+    <button id="te_perdono_btn">Te perdono bello bebé</button>
+    <button id="perdon_btn">Perdóname por favor</button>
+  </div>
+
+  <script>
+    const teAmoText = document.getElementById('te-amo-text');
+    const vidaAmorGif = document.getElementById('vida-amor-gif');
+    const quieroPerdon = document.getElementById('quiero-perdon');
+    const tePerdonoButton = document.getElementById('te_perdono_btn');
+    const perdonButton = document.getElementById('perdon_btn');
+    let clickCount = 0;
+
+    tePerdonoButton.addEventListener('click', function() {
+      teAmoText.style.display = 'block'; // Mostrar el texto "TE AMO<3"
+      vidaAmorGif.style.display = 'block'; // Mostrar el GIF
+      // Ocultar los botones y el texto "Quiero tu perdón"
+      tePerdonoButton.style.display = 'none';
+      perdonButton.style.display = 'none';
+      quieroPerdon.style.display = 'none';
+    });
+
+    perdonButton.addEventListener('click', function() {
+      const perdonTexts = [
+        "Por favor",
+        "Andale bella bebe",
+        "Te compro un esquite si me perdonas",
+        "Te amo, perdoname",
+        "Bocol quiere que me ames",
+        "Te extraño",
+        "Te lo ruego",
+        "Shi bebe?",
+        "Chiquita andale",
+        "Si no me perdonas es como si te divorciaras de mi",
+        "Te bailo bebe",
+        "Ya dale clic al otro boton, bebe"
+      ];
+      perdonButton.textContent = perdonTexts[clickCount % perdonTexts.length];
+      clickCount++;
+    });
+  </script>
+</body>
+</html>
